@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import LandingHeader from '@/components/LandingHeader';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Thermometer, Database, BarChart, Settings, Lightbulb, Users, CheckCircle, MessageSquare, Send } from 'lucide-react';
+import { ArrowRight, Settings, BarChart, Lightbulb, Send } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -84,7 +84,7 @@ const LandingPage = () => {
             className="text-lg md:text-xl text-slate-200 mb-10 max-w-3xl mx-auto"
             style={{ filter: 'drop-shadow(0 0 8px hsla(var(--markone-lines), 0.3))' }}
           >
-            Simplificando Processos, Maximizando Resultados. Oferecemos consultoria e soluções personalizadas para monitoramento IoT.
+            Simplificando Processos, Maximizando Resultados.
           </motion.p>
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}

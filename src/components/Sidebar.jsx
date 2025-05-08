@@ -2,13 +2,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { LayoutDashboard, Settings, Thermometer } from 'lucide-react';
+import { LayoutDashboard, Settings, Thermometer, FolderKanban } from 'lucide-react'; // Adicionado FolderKanban
 import { cn } from '@/lib/utils';
 
 const Sidebar = () => {
   const navItems = [
     { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
-    { name: 'Configurações', path: '/settings', icon: Settings }, // Exemplo de outra rota
+    { name: 'Projetos', path: '/projects', icon: FolderKanban }, // Novo item de menu
+    { name: 'Configurações', path: '/settings', icon: Settings },
   ];
 
   const navLinkClasses = ({ isActive }) =>
@@ -29,7 +30,7 @@ const Sidebar = () => {
       <div className="h-20 flex items-center justify-center border-b border-gray-200">
          <div className="flex items-center text-xl font-bold text-primary">
             <Thermometer className="h-8 w-8 mr-2" />
-            <span>TempApp</span>
+            <span>MARK ONE</span>
          </div>
       </div>
       <nav className="flex-1 px-4 py-6 space-y-2">
@@ -43,7 +44,7 @@ const Sidebar = () => {
             <NavLink
               to={item.path}
               className={navLinkClasses}
-              end={item.path === '/dashboard'} // Garante que só /dashboard seja ativo na raiz
+              end={item.path === '/dashboard' || item.path === '/projects'} 
             >
               <div className="w-6 h-6 mr-3 flex items-center justify-center bg-primary/20 text-primary rounded">
                 <item.icon className="h-4 w-4" />
@@ -54,7 +55,7 @@ const Sidebar = () => {
         ))}
       </nav>
       <div className="p-4 border-t border-gray-200 mt-auto">
-        <p className="text-xs text-gray-500 text-center">© 2025 TempApp</p>
+        <p className="text-xs text-gray-500 text-center">© {new Date().getFullYear()} MARK ONE</p>
       </div>
     </motion.div>
   );
